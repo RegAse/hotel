@@ -16,6 +16,15 @@ CREATE TABLE IF NOT EXISTS gudmundur_hotel.`guests` (
   PRIMARY KEY (`id`)
 );
 
+-- Comments
+CREATE TABLE IF NOT EXISTS gudmundur_hotel.`comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `guest_id` int(11) NOT NULL,
+  `content` varchar(320) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (guest_id) REFERENCES guests(id)
+);
+
 -- Roomtypes
 CREATE TABLE IF NOT EXISTS gudmundur_hotel.`roomtypes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
